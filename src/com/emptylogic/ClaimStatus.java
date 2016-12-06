@@ -50,8 +50,8 @@ public class ClaimStatus {
 			e.printStackTrace();
 		}
 		
-		ExecutorService es = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-		es.submit(new InquiryRunner());
+		ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+		executorService.execute(new InquiryRunner());
 		
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("ack", ackMessage);
